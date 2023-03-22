@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_b"
+    app:startDestination="@id/FirstFragmentB">
+
+    <fragment
+        android:id="@+id/FirstFragmentB"
+        android:name="com.flexproject.navigationdeeplinks.fragmentB.FirstFragmentB"
+        tools:layout="@layout/fragment_first_b">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="navigationDeepLinks.com/firstFragB" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SecondFragmentB"
+        android:name="com.flexproject.navigationdeeplinks.fragmentB.SecondFragmentB"
+        tools:layout="@layout/fragment_second_b">
+
+        <argument android:name="textArg" app:argType="string"/>
+
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="navigationDeepLinks.com/secondFragB/?textArg={textArg}" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NavigationDeepLinks"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".activityB.ActivityB"
+            android:label="@string/title_activity_b"
+            android:theme="@style/Theme.NavigationDeepLinks.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:path="/activityb"
+                    android:host="com.flexproject.navigationdeeplinks"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activityA.ActivityA"
+            android:exported="true"
+            android:label="@string/title_activity_activity"
+            android:theme="@style/Theme.NavigationDeepLinks.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:path="/activitya"
+                    android:host="com.flexproject.navigationdeeplinks"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activityMain.MainActivity"
+            android:exported="true">
+
+            <nav-graph android:value="@navigation/nav_graph_main" />
+            <nav-graph android:value="@navigation/nav_graph_a" />
+            <nav-graph android:value="@navigation/nav_graph_b" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
