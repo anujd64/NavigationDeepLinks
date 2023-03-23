@@ -9,10 +9,6 @@ import androidx.navigation.fragment.findNavController
 import com.flexproject.navigationdeeplinks.R
 import com.flexproject.navigationdeeplinks.databinding.FragmentFirstBBinding
 
-
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class FirstFragmentB : Fragment() {
 
     private var _binding: FragmentFirstBBinding? = null
@@ -24,7 +20,7 @@ class FirstFragmentB : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentFirstBBinding.inflate(inflater, container, false)
         return binding.root

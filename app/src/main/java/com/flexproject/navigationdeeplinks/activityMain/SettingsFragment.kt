@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.navigation.fragment.findNavController
+import com.flexproject.navigationdeeplinks.CONSTANTS
 import com.flexproject.navigationdeeplinks.databinding.FragmentSettingsBinding
-
-
 class SettingsFragment : Fragment() {
 
     private var _binding: FragmentSettingsBinding? = null
@@ -29,31 +28,31 @@ class SettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
-            val deepLinkUri = "https://navigationDeepLinks.com/firstFragA"
+            val deepLinkUri = "${CONSTANTS.BASE_URI}/firstFragA"
             findNavController().navigate(deepLinkUri.toUri())
         }
         binding.buttonSecond.setOnClickListener {
-            val deepLinkUri = "https://navigationDeepLinks.com/secondFragA/?textArg=navigating from settings to second fragment A"
+            val deepLinkUri = "${CONSTANTS.BASE_URI}/secondFragA/?textArg=navigating from settings to second fragment A"
             findNavController().navigate(deepLinkUri.toUri())
         }
 
         binding.buttonThird.setOnClickListener {
-            val deppLinkUri = "https://navigationDeepLinks.com/firstFragB"
+            val deppLinkUri = "${CONSTANTS.BASE_URI}/firstFragB"
             findNavController().navigate(deppLinkUri.toUri())
         }
 
         binding.buttonFourth.setOnClickListener {
-            val deppLinkUri = "https://navigationDeepLinks.com/secondFragB/?textArg=navigating from settings to second fragment B"
+            val deppLinkUri = "${CONSTANTS.BASE_URI}/secondFragB/?textArg=navigating from settings to second fragment B"
             findNavController().navigate(deppLinkUri.toUri())
         }
 
         binding.buttonFifth.setOnClickListener {
-            val deppLinkUri = "https://navigationDeepLinks.com/profile"
+            val deppLinkUri = "${CONSTANTS.BASE_URI}/profile"
             findNavController().navigate(deppLinkUri.toUri())
         }
 
         binding.buttonSixth.setOnClickListener {
-            val deppLinkUri = "https://navigationDeepLinks.com/home"
+            val deppLinkUri = "${CONSTANTS.BASE_URI}/home"
             findNavController().navigate(deppLinkUri.toUri())
         }
     }

@@ -16,16 +16,10 @@ import androidx.navigation.fragment.navArgs
 import com.flexproject.navigationdeeplinks.R
 import com.flexproject.navigationdeeplinks.databinding.FragmentSecondABinding
 import com.flexproject.navigationdeeplinks.fragmentB.SecondFragmentBArgs
-
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class SecondFragmentA : Fragment() {
 
     private var _binding: FragmentSecondABinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     private val args: SecondFragmentAArgs by navArgs()
@@ -50,10 +44,6 @@ class SecondFragmentA : Fragment() {
                     ).build().toBundle()
                 )
             val deeplink = navDeepLinkBuilder.createPendingIntent()
-
-//            val deeplink = findNavController().createDeepLink()
-//                .setDestination(R.id.SecondFragmentB)
-//                .createPendingIntent()
 
             val notificationManager =
                 requireContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

@@ -11,9 +11,6 @@ import com.flexproject.navigationdeeplinks.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private var _binding: ActivityMainBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
